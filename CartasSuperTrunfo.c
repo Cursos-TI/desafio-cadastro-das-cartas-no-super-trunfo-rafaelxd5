@@ -11,6 +11,8 @@ int main() {
     int pontosTuristicos[MAX_CIDADES]; // Pontos turisticos
     int contador = 0;                // Contador de cidades cadastradas
     int opcao;
+    float densidade;
+    float pibcapita;
 
     do {
 
@@ -42,7 +44,7 @@ int main() {
             printf("Area km2: ");
             scanf("%f", &areas[contador]);
 
-            printf("PIB em bilhoes: ");
+            printf("PIB: ");
             scanf("%f", &pibs[contador]);
 
             printf("Pontos Turisticos: ");
@@ -64,8 +66,17 @@ int main() {
                     printf("Estado: %s\n", estados[i]);
                     printf("Populacao: %d habitantes\n", populacoes[i]);
                     printf("Area: %.2f km²\n", areas[i]);
-                    printf("PIB: %.2f bilhoes\n", pibs[i]);
+                    printf("PIB: %.2f\n", pibs[i]);
                     printf("Pontos Turisticos: %d\n", pontosTuristicos[i]);
+
+                    // Cálculo da densidade populacional
+                    densidade = populacoes[i]/areas[i];
+
+                     // Cálculo do PIB per capita
+                    pibcapita = pibs[i] / populacoes[i];
+
+                    printf("densidade: %.2f\n",densidade);
+                    printf("pib per capita: %.2f\n",pibcapita);
                 }
             }
         } else if (opcao != 0) {
